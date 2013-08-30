@@ -1,0 +1,111 @@
+/*****************
+ * Notebooks and *
+ * tabs          *
+ *****************/
+
+.notebook tab .button * {
+	padding: 0px;
+}
+
+.notebook {
+	padding: 	0px;
+	border-width: 1px 1px 1px 1px;
+	border-color: @notebook_border;
+	border-style: solid;
+
+	border-radius: 0px;
+
+    background-color: shade(@theme_bg_color, 0.97);
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (#e7e7dd), to (#e7e7df));
+
+    -GtkNotebook-tab-overlap:   4;
+    -GtkNotebook-tab-curvature: 4;
+
+    -unico-focus-border-radius: 3;
+    -unico-focus-fill-color: alpha (@selected_bg_color, 0.0);
+    -unico-focus-outer-stroke-color: @transparent;
+}
+
+.notebook GtkDrawingArea {
+	/* ubuntu 12 */
+	background-color: #DBDBCE;/*shade (@theme_bg_color, 0.97)*/;
+}
+
+.notebook tab {    
+ 
+	/* border-width: 1px; */
+	border-width: 1px;
+	border-style: solid; 
+	border-radius: 0px;
+        border-color: @notebook_border;
+	
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (#F5F5F5),
+                                     color-stop (0.25, #F1F1F1),
+                                     to (#DADACD));
+
+
+}
+
+.notebook tab:first-child {
+    border-radius: 0px 0px 0px 0px;
+}
+
+.notebook tab:last-child {
+    border-radius: 0px 0px 0px 0px;
+}
+
+.notebook tab:only-child {
+    border-radius: 0px 0px 0px 0px;
+}
+
+.notebook tab.top {
+    padding: 2px 6px 1px 6px;
+}
+
+.notebook tab.bottom {
+    padding: 2px 6px 1px 6px;
+}
+
+.notebook tab.right {
+    padding: 3px 4px 3px 0px;
+}
+
+.notebook tab.left {
+    padding: 3px 0px 3px 4px;
+}
+
+.notebook tab:active,
+.notebook tab *:active  {
+	border-radius: 0px;
+	border-width: 1px 1px 1px 1px;
+	border-color: @notebook_border;
+	border-style: solid;
+
+	background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (#e7e7dd), to (#e7e7df));
+	-unico-inner-stroke-width: 0px 0px 0px 0px;
+
+}
+
+.notebook tab *:active,
+.notebook tab GtkLabel:active {
+	color: @theme_text_color;
+	text-shadow: 0 1 alpha(@theme_base_color, 0.30);
+}
+
+.notebook tab GtkLabel {
+	/* ubuntu 12 */
+	color: @theme_text_color; 
+	text-shadow: 0 1 alpha(@theme_base_color, 0.30);
+}
+
+.notebook tab *:active:insensitive {
+	text-shadow: none;
+}
+
+

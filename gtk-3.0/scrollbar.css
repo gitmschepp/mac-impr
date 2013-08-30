@@ -1,0 +1,78 @@
+/**************
+ * Scrollbars *
+ **************/
+
+.scrollbar {
+    -GtkRange-slider-width: 7px;
+    -GtkRange-stepper-size: 0px;
+    -GtkRange-stepper-spacing: 0px;
+    -GtkRange-trough-border: 0px;
+        -GtkRange-stepper-size: 0;
+    -GtkScrollbar-has-backward-stepper: 0px;
+    -GtkScrollbar-has-forward-stepper: 0px;
+    
+    -GtkScrollbar-min-slider-length: 100px;
+}
+
+.scrollbar.trough.vertical {
+        border-radius: 0px;
+	border-width: 0px;
+	background-color: #979781;
+        background-image: -gtk-gradient (linear, left top, right top,from (#979781),to (#979781));
+
+	-unico-outer-stroke-width: 0px;
+	-unico-inner-stroke-width: 0px 1px 0px 1px;
+	-unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,from (#979781),to (#979781));
+}
+
+.scrollbar.trough.horizontal {
+        border-radius: 0px;
+	border-width: 0px;
+	background-color: #979781;
+        background-image: -gtk-gradient (linear, left top, left bottom,from (#979781),to (#979781));
+
+	-unico-outer-stroke-width: 0px;
+	-unico-inner-stroke-width: 1px 0px 1px 0px;
+	-unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,from (#979781),to (#979781));
+}
+
+.scrollbar.slider {
+    border-width: 0px;
+    border-radius: 10px;
+    background-color: #3875d7;
+    background-image: -gtk-gradient (linear, left top, left bottom,from (#3875d7),to (#3875d7));
+}
+
+.scrollbar.button {
+    border-width: 0px;
+    border-radius: 0px;
+}
+
+.scrollbar.slider:prelight {
+        background-color:#2967cd;
+    background-image: -gtk-gradient (linear, left top, left bottom,from (#2967cd),to (#2967cd));
+}
+
+.scrollbar.slider:insensitive {
+    -GtkRange-slider-width: 0px;
+}
+
+.scrollbar.trough:insensitive {
+    -GtkRange-trough-border: 3px;
+}
+
+/* overlay scrollbar */
+OsThumb:selected,
+OsScrollbar:selected {
+    background:#c0c0af;
+}
+
+OsThumb:active,
+OsScrollbar:active {
+    background-color: #BBBBBB;
+}
+
+OsThumb:insensitive,
+OsScrollbar:insensitive {
+    background-color: #DDDDDD;
+}

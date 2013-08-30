@@ -1,0 +1,826 @@
+#Mac4Debian Aurora based.REV.00
+#Based upon a lot of artworks, not really remember which ones, too many of them!!!
+
+# ===[ buttons ]===
+#  the prelight of toggle buttons is darkened slightly 
+#
+
+# ===[ scroll bars ]===
+#  bg[ACTIVE] is trough color
+#  bg[NORMAL] & bg[NORMAL] are scrollbar colors
+
+# ===[ check and radio buttons ]===
+#  bg[SELECTED] is the selected background colour
+#  text[SELECTED] is the selected check/circle color
+#  text[INSENSITIVE] is the disabled check/circle colour
+#  base[*] is used for all other background states
+#  --on prelight the bg is lightened slightly
+#  --bg is lightened slightly when check/radio not drawn (for all states)
+
+include "scrollbar.rc"
+include "panel.rc"
+include "menubar01.rc"
+include "icons/icon.rc"
+include "thunar-tweaks.01.rc"
+
+#default color scheme
+#gtk_color_scheme = "fg_color:#000000\nbg_color:#C7C7C7\nbase_color:#ffffff\ntext_color:#000000#\nselected_bg_color:#247EB3\nselected_fg_color:#ffffff\ntooltip_bg_color:#634110\ntooltip_fg_color:#FFFFFF"
+gtk_color_scheme = "fg_color:#000000\nbg_color:#C7C7C7\nbase_color:#ffffff\ntext_color:#000000\nselected_bg_color:#d7c692\nselected_fg_color:#ffffff\ntooltip_bg_color:#634110\ntooltip_fg_color:#FFFFFF"
+gtk-menu-popup-delay = 40
+gtk-button-images = 0
+
+style "theme-default"
+{
+  font_name = "Ubuntu 8"
+  GtkButton::default_border = { 0, 0, 0, 0 }
+  GtkButton::child-displacement-x = 0
+  GtkButton::child-displacement-y = 1
+  #GtkWidget::focus-padding = 0
+
+  GtkRange::trough-border = 0
+  GtkRange::slider-width = 19
+  GtkRange::stepper-size = 19
+
+  #Proprietà della scrollbar
+  GtkScrollbar::has_secondary_backward_stepper	= 1
+  GtkScrollbar::has_secondary_forward_stepper 	= 0
+  GtkScrollbar::has-backward-stepper 		= 0
+  GtkScrollbar::min_slider_length		= 60
+
+  # Width, in pixels, between focus indicator and the widget 'box'.
+  # Setta le dimensioni delle combo box, exc
+  	GtkWidget::focus_padding 		= 0
+
+  # Setta le dimensioni dei pulsanti
+  	GtkButton::focus-padding 		= 0 #"0" for more compact buttons
+
+  # Setta le dimensioni dei pulsanti
+  	GtkButton::inner-border		        = { 1, 1, 0, 0 }
+  	GtkButton::default_border		= { 0, 0, 0, 0 }
+ 	GtkButton::default_outside_border	= { 0, 0, 0, 0 }
+
+  #Distanza tra i bottoni nelle finestre
+  	GtkDialog::button-spacing 		= 8
+
+  #Dimensione dello spazio vicino alle zone dei pulsanti
+ 	GtkDialog::action-area-border 	 	= 1
+  	GtkMessageDialog::message-border      	= 10
+
+  #Size of spacers 	
+ 	GtkToolbar::space-size 			= 1
+
+  #Amount of border space between the toolbar shadow and the buttons
+ 	GtkToolbar::internal-padding		= 0
+
+  #Nei menu [es menu programmi] dimensione da ambo le parti orizzontali dello spazio delimitante il menu
+ 	GtkMenu::horizontal-padding 		= 1
+
+  #Nei menu [es menu programmi] dimensione da ambo le parti verticali dello spazio delimitante il menu
+ 	GtkMenu::vertical-padding 		= 1
+
+  #Distanza tra finestra madre e finestra figlia verticale
+  	GtkMenu::vertical-offset 		= -1
+
+  #Distanza tra finestra madre e finestra figlia orizzontale
+  	GtkMenu::horizontal-offset 		= -1
+
+  #Dimensione verticale del menu di thunar
+  	GtkMenuBar::internal-padding	 	= 1
+
+  #Dimensione ???
+	GtkMenuBar::horizontal-padding		= 0
+
+  GtkPaned::handle_size  = 8
+
+  GtkMenuBar::internal-padding  = 0
+  GtkTreeView::expander_size     = 13 #15
+  GtkExpander::expander_size     = 13 #17
+  
+  GtkScale::slider-length = 25
+  GtkScale::slider-width  = 17
+  GtkScale::trough-border = 0
+
+  GtkWidget::link-color = "#0062dc" # blue
+  GtkWidget::visited-link-color = "#8c00dc" #purple
+
+  WnckTasklist::fade-overlay-rect = 0
+  WnckTasklist::fade-loop-time = 5.0 # 5 seconds
+  WnckTasklist::fade-opacity = 0.5 # final opacity
+
+  #makes menu only overlap border
+  GtkMenu::horizontal-offset = -1
+
+  #removes extra padding at top and bottom of menus.  Makes menuitem overlap border
+  GtkMenu::vertical-padding = 0
+
+  #set to the same as roundness, used for better hotspot selection of tabs
+  GtkNotebook::tab-curvature = 2
+  GtkNotebook::tab-overlap = 4
+
+  GtkMenuItem::arrow-spacing = 10
+  #Spacing between edge with indicator and text
+  GtkOptionMenu  ::indicator-size = {11, 5}
+  #GtkOptionMenu  ::indicator-spacing = {6, 5, 4, 4}
+
+  GtkCheckButton ::indicator-size = 15
+  GtkCheckButton ::indicator-spacing = 1
+  GtkRadioButton ::indicator-size = 15
+
+  GtkTreeView::vertical_separator = 2
+  GtkTreeView::horizontal_separator = 2
+  GtkTreeView::odd_row_color = mix(0.98, shade (0.93, @base_color), @selected_bg_color)
+
+  GtkScrolledWindow::scrollbar-spacing = 0
+  GtkScrolledWindow::scrollbars-within-bevel = 1
+
+  #Style of bevel around those items
+  GtkScrolledWindow::shadow_type 	= GTK_SHADOW_NONE
+  GtkMenuBar::shadow_type 		= GTK_SHADOW_NONE
+  GtkToolbar::shadow_type 		= GTK_SHADOW_NONE
+  GtkStatusbar::shadow_type 		= GTK_SHADOW_NONE
+  GtkFrame::shadow_type 		= GTK_SHADOW_NONE
+
+  xthickness = 1
+  ythickness = 1
+
+
+
+  fg[NORMAL]       	= "#363636"	# Metacity and mouseover, Most text
+  fg[ACTIVE]       	= "#363636"	# text on unfocused tabs
+  fg[PRELIGHT]     	= "#000000"	# text on buttons (hover)
+  fg[SELECTED]     	= "#FFFFFF"	# selected text on lists
+  fg[INSENSITIVE]  	= "#747474"	# greyed "unused" text
+
+  bg[NORMAL]	   	= "#d9d9d9"	# entire background
+  bg[PRELIGHT]	   	= "#b5b5b5"	# button prelights
+#  bg[ACTIVE]       	= "#518bd9"     # selected taskbar items
+#  bg[SELECTED]     	= "#4285c7"     # tab border, checkbutton and radiobutton
+  bg[ACTIVE]       	= "#e1d09b"     # selected taskbar items
+  bg[SELECTED]     	= "#c1a346"     # tab border, checkbutton and radiobutton
+  bg[INSENSITIVE]  	= "#afafaf"     # greyed buttons	
+
+  base[NORMAL]     	= "#FFFFFF"	# window background
+  base[ACTIVE]     	= "#d4d4d4"	# Menu active item in inactive window
+  base[PRELIGHT]   	= "#FFFFFF"	# menubar outline colour
+  base[INSENSITIVE]	= "#e8e8e8"	# Menu active item in active window
+#  base[SELECTED]   	= "#358cdb"	# greyed sliders
+  base[SELECTED]   	= "#c1a346"	# greyed sliders
+
+
+  text[NORMAL]		= "#000000"	# text in general
+  text[INSENSITIVE]	= "#747474"	# greyed text
+  text[SELECTED]   	= "#000000"	# Active text in active window
+  text[ACTIVE]     	= "#000000"	# Active text in inactive window
+  text[PRELIGHT]   	= "#000000"	# hover text (on buttons)
+
+  engine "aurora" 
+#   engine "clearlooks"
+#   engine "murrine"
+  {
+	  menubarstyle    = 1 # 0 = flat, 1 = gradient, 2 = sunken
+	  curvature       = 2.0
+	  arrowsize       = 1.0# controls combo_arrow circle size.  Diameter set by (11 + 2 * arrowsize)
+	  old_arrowstyle  = FALSE #set to TRUE for original circled arrows
+	  animation       = TRUE # FALSE = disabled, TRUE = enabled
+  }
+}
+
+################### GTK GRADIENT ################### START
+#Immagine di sfondo per le finestre
+
+style "gradient" = "default"
+{
+    bg_pixmap[NORMAL] 		= "Gradient/BGGradient.03.png"
+}
+class "GtkWindow" 		style "gradient"
+
+################### GTK GRADIENT ################### END
+################### GTK TOOLBAR  ################### START
+
+style "toolbar"
+{
+
+  bg_pixmap[NORMAL] 	= "Toolbar/toolbar-back.png"
+  fg[NORMAL] 		= "#000000"
+  fg[PRELIGHT] 		= "#000000"
+  fg[ACTIVE] 		= "#ffffff"
+  text[NORMAL] 		= "#000000"
+
+  xthickness = 0
+  ythickness = 0
+
+    engine "pixmap"
+    {
+	image
+	{
+		function	= BOX
+		file		= "Toolbar/toolbar-back.png"
+		border		= { 0, 0, 0, 0 }
+		stretch		= FALSE
+	}
+    }
+}
+
+class "*BonoboDockItem" 	style "toolbar"
+widget_class "*BonoboDockItem" 	style "toolbar"
+
+class "*HandleBox" 		style "toolbar"
+widget_class "*HandleBox" 	style "toolbar"
+
+class "*Toolbar" 		style "toolbar"
+widget_class "*Toolbar" 	style "toolbar"
+
+################### GTK TOOLBAR  ################### END
+################### GTK MENU     ################### START
+
+style "menu" = "default"
+{
+
+  xthickness = 0
+  ythickness = 4
+	
+    engine "pixmap"
+    {
+	image
+	{
+	    function 		= BOX
+	    recolorable 	= TRUE
+	    detail 		= "menu"
+	    file 		= "Menu/menu04.png"
+	    border 		= { 6, 6, 6, 6 }
+	    stretch 		= FALSE
+	    overlay_file	= "Menu/menu_shadow.01.png"
+	    overlay_border      = { 5, 5, 5, 5 }
+	    overlay_stretch     = TRUE
+	}
+    }
+}
+
+class "GtkMenu" 			style "menu"
+################### GTK MENU         ################### END
+################### GTK MENU ITEM    ################### START
+
+style "MenuItem"
+
+{
+
+  xthickness = 3
+  ythickness = 2
+
+    engine "pixmap" 
+    {
+	image 
+	{
+            function            = BOX
+            recolorable         = TRUE
+            file                = "Menu/menuitem.02.png"
+            stretch             = TRUE
+        }
+
+    	image 
+        {
+        	function        = HLINE
+ 		recolorable     = TRUE
+ 		file            = "Menu/menu-separator.01.png"
+		border          = { 3, 3, 3, 3 }
+		stretch         = TRUE
+      	}
+
+	image
+	{
+		function = ARROW
+		recolorable = TRUE
+		state = NORMAL
+		overlay_file = "Arrows/arrow-menu-normal.png"
+		overlay_stretch	= FALSE
+		arrow_direction	= RIGHT
+	    }
+		
+	image
+	    {
+		function = ARROW
+		recolorable = TRUE
+		state = PRELIGHT
+		overlay_file = "Arrows/arrow-menu-prelight.png"
+		overlay_stretch	= FALSE
+		arrow_direction	= RIGHT
+	}
+
+	image
+	    {
+		function = ARROW
+		recolorable = TRUE
+		state = INSENSITIVE
+		overlay_file = "Arrows/arrow-menu-insensitive.png"
+		overlay_stretch	= FALSE
+		arrow_direction	= RIGHT
+	}
+
+    }
+}
+
+class "GtkMenuItem" 			style "MenuItem"
+widget_class "*MenuItem*" 		style "MenuItem"
+widget_class "*.GtkAccelMenuItem.*" 	style "MenuItem"
+class "GtkItem"           		style "MenuItem"
+class "GtkTearoffMenuItem"		style "MenuItem"
+
+################### GTK MENU ITEM    ################### END
+################### GTK TABS         ################### START
+style "notebook" = "default"
+{
+	# These thickness settings make sure that we see the whole thin blue 
+	# line at the top of the notebook page.
+	bg[NORMAL] = "#d9d9d9"	
+	xthickness = 3
+	ythickness = 3
+  
+	engine "pixmap" 
+    {
+		# Top tab (current)
+		image 
+		{
+			function = EXTENSION
+			state = NORMAL
+			gap_side = BOTTOM
+			file = "Tabs/tab-top-active.png"
+			#border = { 6, 6, 9, 0 }
+			border = { 1, 1, 5, 0 }
+			stretch = TRUE
+		}
+
+		# Top tab (background)
+		image 
+		{
+			function = EXTENSION
+			state = ACTIVE
+			gap_side = BOTTOM
+			file = "Tabs/tab-top.png"
+			border = { 1, 1, 2, 0 }
+			stretch = TRUE
+		}
+		
+		# Bottom tab (current)
+		image 
+		{
+			function = EXTENSION
+			state = NORMAL
+			gap_side = TOP
+			file = "Tabs/tab-bottom-active.png"
+			border = {1,1,0,5}
+			stretch = TRUE
+		}
+
+		# Bottom tab (background)
+		image 
+		{
+			function = EXTENSION
+			state = ACTIVE
+			gap_side = TOP
+			file = "Tabs/tab-bottom.png"
+			border = {1,1,0,2}
+			stretch = TRUE
+		}
+		
+		# Right tab (current)
+		image 
+		{
+			function = EXTENSION
+			state = NORMAL
+			gap_side = LEFT
+			file = "Tabs/tab-right-active.png"
+			border = {1,9,7,7} 
+			stretch = TRUE
+		}
+
+		# Right tab (background)
+		image 
+		{
+			function = EXTENSION
+			state = ACTIVE
+			gap_side = LEFT
+			file = "Tabs/tab-right.png"
+			border = {1,9,7,7} 
+			stretch = TRUE
+		}
+
+		# Left tab (current)
+		image 
+		{
+			function = EXTENSION
+			state = NORMAL
+			gap_side = RIGHT
+			file = "Tabs/tab-left-active.png"
+			border = {9,1,7,7} 
+			stretch = TRUE
+		}
+
+		# Left tab (background)
+		image 
+		{
+			function = EXTENSION
+			state = ACTIVE
+			gap_side = RIGHT
+			file = "Tabs/tab-left.png"
+			border = {7,1,7,7} 
+			stretch = TRUE
+		}
+
+		#Use this image when the tabs are at the top of the notebook.
+		image 
+		{
+			function = BOX_GAP
+			gap_side = TOP
+			file = "Tabs/notebook_top_flat.png"
+			#border = {1,1,4,1}
+			border = {1,1,1,1}
+			stretch = TRUE
+		}
+		# use this image when the tabs are on the bottom of the notebook.
+		image 
+		{
+			function = BOX_GAP
+			gap_side = BOTTOM
+			file = "Tabs/notebook_top_flat.png"
+			border = {1,1,1,1}
+			stretch = TRUE
+		}
+		# Use this when the tabs are on the left
+		image 
+		{
+			function = BOX_GAP
+			gap_side = LEFT
+			file = "Tabs/notebook_left_flat.png"
+			border = {1,2,2,2}
+			stretch = TRUE
+		}
+		# Use this when the tabs are on the right
+		image 
+		{
+			function = BOX_GAP
+			gap_side = RIGHT
+			file = "Tabs/notebook_right_flat.png"
+			border = {2,1,2,2}
+			stretch = TRUE
+		}
+		# Use this wheb there are no tabs
+	        image 
+	        {
+	               function	= BOX
+		       recolorable = TRUE
+		       file = "Tabs/notebook_flat.png"
+		       border = {3, 3, 3, 3 }
+		       stretch = TRUE
+		}
+	}
+}	
+
+class "GtkNotebook" 				style "notebook"
+widget_class "*<GtkNotebook>"    		style "notebook"
+widget_class "*<GtkNotebook>*<GtkEventBox>"	style "notebook"
+widget_class "*<GtkNotebook>.GtkLabel*" 	style "notebook" #for tabs
+
+################### GTK TABS         ################### END
+################### GTK TOOLTIP      ################### START
+
+style "tooltips" = "default"
+{
+  xthickness = 6
+  ythickness = 4
+   
+    engine "pixmap"
+    {
+	image
+	{
+		function 	= FLAT_BOX
+     		detail		= "tooltip"
+     		recolorable	= TRUE
+		border   	= {6,6,6,6}
+		file     	= "Others/tooltip-bg.png"
+		overlay_file	= "Menu/menu_shadow.00.png"
+		overlay_border      = { 5, 5, 5, 5 }
+	        overlay_stretch     = TRUE
+      		stretch		= TRUE
+	}
+    }
+}
+
+class 		"*GtkTooltips*"		style "tooltips"
+widget 		"gtk-tooltips" 		style "tooltips"
+widget 		"gtk-tooltip*" 		style "tooltips"
+widget 		"gtk-tooltips"  	style "tooltips"
+widget_class 	"*Tooltips*"		style "tooltips"
+
+################### GTK TOOLTIP      ################### END
+################### GTK TREEVIEW     ################### START
+
+style "gtk treeview" 
+{
+
+#  base[NORMAL]   		= "#d6dde5"
+#  base[ACTIVE]     		= "#3670bd" 
+#  base[PRELIGHT]   		= "#ffffff" 
+#  base[SELECTED]		= "#3670bd" 
+
+  base[NORMAL]   		= "#d7c692"
+  base[ACTIVE]     		= "#d7d1be"
+  base[PRELIGHT]   		= "#ffffff" 
+  base[SELECTED]		= "#d7cdae"
+
+#  text[NORMAL]			= "#ffffff"
+  text[NORMAL]			= "#222222"
+
+  GtkTreeView::odd_row_color 	= "#FFFFFF"
+#  GtkTreeView::even_row_color 	= "#d6dde5"
+#  GtkTreeView::even_row_color 	= "#6d685a"
+  GtkTreeView::even_row_color 	= "#e3e2df"
+
+
+}
+class "GtkTreeView" 		style "gtk treeview"
+################### GTK TREEVIEW     ################### END
+
+style "theme-wide" = "theme-default"
+{
+  xthickness = 2
+  ythickness = 2
+}
+
+style "theme-wider" = "theme-default"
+{
+  xthickness = 3
+  ythickness = 3
+}
+
+style "theme-button" = "theme-wider"
+{
+  bg[NORMAL]   =  shade (1.16,@bg_color)
+  bg[ACTIVE]   =  shade (0.84,@bg_color)
+  bg[PRELIGHT] =  mix(0.93, shade (1.11,@bg_color), shade (1.04,@selected_bg_color))
+  bg[SELECTED] =  shade (1.10,@selected_bg_color)
+engine "aurora" 
+#   engine "clearlooks"
+#   engine "murrine"
+  {
+	  curvature       = 2.5
+  }
+}
+
+style "theme-entry" = "theme-button" { ythickness = 4 }
+
+style "theme-frame" = "theme-wide" { }
+
+style "theme-toolbar"
+{
+  xthickness = 2
+  ythickness = 2
+  bg[NORMAL] =  shade (1.078,@bg_color) #mix(0.98, shade (1.0475,@bg_color), shade (1.1,@selected_bg_color)) #slightly tinted
+}
+
+
+style "theme-handlebox"
+{
+  bg[NORMAL] = shade (0.95,@bg_color)
+}
+
+style "theme-scale"
+{
+  bg[NORMAL]   =  shade (1.06, @bg_color)
+  bg[PRELIGHT] =  mix(0.85, shade (1.1,@bg_color), @selected_bg_color)
+  bg[SELECTED] =  shade (1.10,@selected_bg_color)
+}
+
+style "theme-range"
+{
+  bg[NORMAL]   =  shade (1.12,@bg_color)#shade (1.085,@bg_color)
+  bg[ACTIVE]   =  @bg_color
+  bg[PRELIGHT] =  mix(0.95, shade (1.10,@bg_color), @selected_bg_color)
+
+  #Arrows
+  text[NORMAL]      =  shade (0.275,@selected_fg_color) #shade (0.925,@fg_color)
+  text[PRELIGHT]    =  @selected_fg_color
+  text[ACTIVE]      =  shade (0.10,@selected_fg_color)
+  text[INSENSITIVE] =  mix (0.80,shade (0.90,@bg_color),@fg_color)
+}
+
+style "theme-notebook" = "theme-wider"
+{
+  bg[NORMAL] =  shade (1.08,@bg_color)
+  fg[ACTIVE] =  shade (0.32, @bg_color)
+  fg[ACTIVE] =  shade (0.32, @bg_color)
+  bg[ACTIVE] =  shade (0.87,@bg_color)
+}
+
+style "theme-paned"
+
+{
+  bg[PRELIGHT] =  shade (1.1,@bg_color)
+}
+
+
+style "theme-panel"
+{
+#	fg[NORMAL] = shade (1.1, @bg_color)
+#    	bg[NORMAL] = shade (0.2, @bg_color)
+#	bg[PRELIGHT] = @selected_bg_color
+    	# Menu
+    	fg[PRELIGHT] = @selected_fg_color
+    	#bg[SELECTED] = @selected_bg_color
+  	font_name  = "Bold 9"
+    	text[PRELIGHT] = @selected_fg_color
+    	#text[SELECTED] = @selected_bg_color
+	#text[NORMAL] = shade (1.1, @bg_color)
+}
+
+
+style "theme-menu"
+{
+  xthickness = 0
+  ythickness = 0
+  bg[NORMAL] = shade (1.16,@bg_color)
+  text[PRELIGHT] 	 =  @selected_fg_color
+  fg[PRELIGHT] 	 =  @selected_fg_color
+
+}
+
+style "theme-menu-item" = "theme-menu"
+
+{
+	xthickness 		 = 3
+	ythickness 	         = 3
+
+#	font_name 	 	 = "Bold 9"
+#	text[PRELIGHT] 		 =  @selected_fg_color
+#	fg[PRELIGHT] 		 =  @selected_fg_color
+
+}
+
+style "theme-menubar"
+{ 
+#  xthickness = 0
+#  ythickness = 0
+  #bg[NORMAL] = shade (0.95,@bg_color)
+}
+style "theme-menubar-item" = "theme-menu-item" {
+#	xthickness = 4
+#	ythickness = 4
+#font_name  = "Bold 9"
+  #fg[NORMAL] 	 =  @selected_fg_color
+  #text[PRELIGHT] 	 =  @selected_fg_color
+  #fg[PRELIGHT] 	 =  @selected_fg_color
+  #text[INSENSITIVE] 	 =  shade (0.60,@selected_fg_color)
+  #fg[INSENSITIVE] 	 =  shade (0.60,@selected_fg_color)
+}
+
+style "theme-tree"
+{
+  xthickness = 2
+  ythickness = 1
+
+  font_name  = "Bold 8"
+  GtkWidget::focus-padding = 0
+
+  bg[NORMAL]   =  shade (1.05,@bg_color)
+  bg[PRELIGHT] =  shade (1.15,@bg_color)
+  bg[ACTIVE]   =  mix(0.87,  shade (1.05,@bg_color), @selected_bg_color)
+}
+
+style "theme-tree-arrow"
+{
+  bg[NORMAL]   =  mix(0.70, shade (0.60,@bg_color), shade (0.80,@selected_bg_color))
+  bg[PRELIGHT] =  mix(0.80, @bg_color, @selected_bg_color)
+
+}
+
+style "theme-progressbar"
+{
+  font_name  = "Bold"
+  bg[NORMAL]   =  shade (1.20,@bg_color)
+  bg[SELECTED] = @selected_bg_color
+  fg[PRELIGHT]  		= @selected_fg_color
+}
+
+style "theme-combo" = "theme-button" { 
+  xthickness = 4
+  ythickness = 4
+}
+
+style "theme-combo-box" = "theme-button" {
+  xthickness = 3
+  ythickness = 2
+}
+
+style "theme-entry-combo-box" = "theme-button" {
+  xthickness = 6
+  ythickness = 3
+}
+
+style "theme-combo-arrow" = "theme-button"
+{
+  xthickness = 1
+  ythickness = 1
+}
+
+style "theme-view"
+{
+  xthickness = 0
+  ythickness = 0
+}
+
+style "theme-check-radio-buttons" = "theme-button"
+{
+  GtkWidget::interior-focus = 0
+  GtkWidget::focus-padding = 1
+  text[SELECTED]     =  @selected_fg_color
+  text[INSENSITIVE]	=  shade (0.625,@bg_color)
+  base[PRELIGHT]     =  mix(0.80, @base_color, @selected_bg_color)
+  bg[INSENSITIVE]    =  shade (1.10,@bg_color)
+  bg[SELECTED]       =  @selected_bg_color
+}
+
+style "theme-calendar"
+{
+  xthickness = 0
+  ythickness = 0
+  bg[NORMAL]        =  shade (0.92,@bg_color)
+  bg[PRELIGHT]        =  shade (0.92,@bg_color)
+  bg[ACTIVE]        =  shade (0.85,@bg_color)
+  text[PRELIGHT]   	=  @selected_fg_color
+}
+
+# widget styles
+class "GtkWidget"       style "theme-default"
+class "GtkScale"        style "theme-scale"
+class "GtkRange"        style "theme-range"
+class "GtkPaned"        style "theme-paned"
+class "GtkFrame"        style "theme-frame"
+class "GtkMenu"         style "theme-menu"
+class "GtkMenuBar"      style "theme-menubar"
+class "GtkEntry"        style "theme-entry"
+class "GtkProgressBar"  style "theme-progressbar"
+class "GtkToolbar"      style "theme-toolbar"
+class "GtkCalendar"     style "theme-calendar"
+
+widget_class "*<GtkButton>"      style "theme-button"
+widget_class "*<GtkCheckButton>" style  "theme-check-radio-buttons"
+widget_class "*<GtkHandleBox>"   style "theme-handlebox"
+
+widget_class "*<GtkNotebook>"  				style "theme-notebook"
+widget_class "*<GtkNotebook>*<GtkEventBox>" 		style "theme-notebook"
+widget_class "*<GtkNotebook>*<GtkDrawingArea>" 		style "theme-notebook"
+widget_class "*<GtkNotebook>*<GtkLayout>"		style "theme-notebook"
+widget_class "*<GtkNotebook>*<GtkViewport>" 		style "theme-notebook"
+widget_class "*<GtkNotebook>.<GtkLabel>*" 		style "theme-notebook" #for tabs
+
+# combobox stuff
+widget_class "*<GtkCombo>*"    style "theme-combo"
+widget_class "*<GtkComboBox>*<GtkButton>"    style "theme-combo-box"
+#widget_class "*<GtkComboBoxEntry>*" style "theme-entry-combo-box"
+#widget_class "*<GtkSpinButton>*"    style "theme-combo"
+
+# treeview stuff
+widget_class "*<GtkTreeView>.<GtkButton>*" 	style "theme-tree"
+widget_class "*<GtkCTree>.<GtkButton>*" 	style "theme-tree"
+widget_class "*<GtkList>.<GtkButton>*" 		style "theme-tree"
+widget_class "*<GtkCList>.<GtkButton>*" 	style "theme-tree"
+
+#For arrow bg
+widget_class "*<GtkTreeView>.<GtkButton>*<GtkArrow>" 	style "theme-tree-arrow"
+widget_class "*<GtkCTree>.<GtkButton>*<GtkArrow>" 	style "theme-tree-arrow"
+widget_class "*<GtkList>.<GtkButton>*<GtkArrow>" 	style "theme-tree-arrow"
+
+
+#######################################################
+##  GNOME specific
+#######################################################
+
+#Panel
+#widget "*PanelWidget*" 					style "theme-toolbar"
+#widget "*PanelApplet*" 					style "theme-panel"
+#widget "*fast-user-switch*"				style "theme-panel" # Workaround for Fast User Switch applet
+#class "PanelApp*" 					style "theme-toolbar"
+#class "PanelToplevel*" 					style "theme-toolbar"
+
+widget_class "*.ETree.ECanvas" 	style "theme-tree" #evolution
+widget_class "*.ETable.ECanvas" 	style "theme-tree" #evolution
+
+style "panelbuttons" = "theme-button"
+{
+  # as buttons are draw lower this helps center text
+  xthickness = 3
+  ythickness = 3
+}
+
+widget_class "*Panel*<GtkButton>*" style "panelbuttons"
+
+#nautilus search stripe and other specialties
+style "extra-view" = "theme-default"{
+	bg[NORMAL] = shade(0.4,@bg_color)
+	fg[NORMAL] = @selected_fg_color
+} 
+#nautilus search stripe
+widget "*.nautilus-extra-view-widget.*Button*.GtkLabel*" style:highest "theme-button"
+widget "*.nautilus-extra-view-widget" style:highest "extra-view"
+widget "*.nautilus-extra-view-widget.*.GtkLabel*" style:highest "extra-view"
+
+

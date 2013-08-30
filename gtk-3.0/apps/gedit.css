@@ -1,0 +1,8 @@
+GeditWindow .notebook tab { border-top: 0px solid #FFFFFF; }
+
+GeditWindow .notebook tab:active { 
+	border-width: 0px 1px 1px 1px;
+	border-color: @notebook_border;
+	border-style: solid;
+	background-image:  -gtk-gradient(linear, left top, right top,from(#dadada),to(#dadada));
+}
